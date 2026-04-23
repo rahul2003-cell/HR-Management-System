@@ -1,0 +1,11 @@
+.profileHeader{display:flex;align-items:center;gap:24px;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);margin-bottom:24px;flex-wrap:wrap;}
+.profileInfo{flex:1;}
+.profileStats{display:flex;gap:12px;}
+.sectionsGrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:768px){.sectionsGrid{grid-template-columns:1fr;}.profileStats{width:100%;}}
+.section{padding:24px;}
+.sectionTitle{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--primary-light);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.fieldsGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.field{display:flex;flex-direction:column;gap:3px;}
+.fieldKey{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text3);}
+.fieldVal{font-size:14px;font-weight:600;}

@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: hrms-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: hrmsdb
+      MYSQL_USER: hrms
+      MYSQL_PASSWORD: hrms123
+    ports: ["3306:3306"]
+    volumes: [mysql_data:/var/lib/mysql]
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
+      interval: 10s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: hrms-backend
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: hrmsdb
+      DB_USER: hrms
+      DB_PASS: hrms123
+      APP_JWT_SECRET: HRMS2024SecretKeyForJWTMustBe256BitsLong!!XXXXXX
+    ports: ["8080:8080"]
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: hrms-frontend
+    depends_on: [backend]
+    ports: ["80:80"]
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

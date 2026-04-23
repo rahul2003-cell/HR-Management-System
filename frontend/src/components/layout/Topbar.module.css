@@ -1,0 +1,8 @@
+.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--border);background:rgba(6,6,20,0.8);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;}
+.left{display:flex;align-items:center;gap:16px;}
+.right{display:flex;align-items:center;gap:10px;}
+.menuBtn{display:none;}
+@media(max-width:1024px){.menuBtn{display:flex;}}
+.title{font-size:18px;font-weight:700;font-family:'Syne',sans-serif;}
+.userChip{display:flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;background:var(--surface2);border:1px solid var(--border);border-radius:999px;}
+.greeting{font-size:13px;font-weight:600;color:var(--text2);}

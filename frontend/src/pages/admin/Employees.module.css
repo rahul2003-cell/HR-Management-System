@@ -1,0 +1,5 @@
+.toolbar{display:flex;align-items:center;gap:16px;padding:16px 20px;margin-bottom:16px;border-radius:var(--r-md);}
+.viewGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+.viewField{display:flex;flex-direction:column;gap:3px;padding:12px;background:var(--surface2);border-radius:var(--r-sm);}
+.viewKey{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text3);}
+.viewVal{font-size:14px;font-weight:600;}
